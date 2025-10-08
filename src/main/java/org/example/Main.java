@@ -1,23 +1,30 @@
 package org.example;
 
-import java.util.Scanner;
+class Carro {
+    String marca;
+    String modelo;
+    int ano;
+    double preco;
 
-public class Main {
-    static Scanner entrada = new Scanner(System.in);
-
-    public static void main(String[] args) {
-
-        System.out.println("Digite seu nome: ");
-        String nome = entrada.nextLine();
-        System.out.println("Digite sua idade: ");
-        int idade = entrada.nextInt();
-
-        System.out.println(imprimir(nome,idade));
-        entrada.close();
+    public Carro(String marca, String modelo, int ano, double preco) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.ano = ano;
+        this.preco = preco;
     }
 
-    public static String imprimir(String nome, int idade) {
-        String status = idade > 17 ? "Maior de idade" : "Menor de idade";
-        return String.format("Nome: %s | Idade: %d%n%s", nome, idade, status);
+    @Override
+    public String toString() {
+        return String.format("Marca: %s %nModelo: %s %nAno: %d %nPreco: %.2f", marca, modelo, ano,preco);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Carro carro1 = new Carro("Mitsubishi", "Lancer Evo 5", 2015, 50000.00);
+        Carro carro2 = new Carro("BMW", "M3 GTR", 2001, 500000.00);
+        System.out.println(carro1);
+        System.out.println("-----------------------");
+        System.out.println(carro2);
     }
 }
