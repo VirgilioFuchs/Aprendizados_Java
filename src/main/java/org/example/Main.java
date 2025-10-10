@@ -1,58 +1,34 @@
 package org.example;
 
-class Carro {
-    private String marca;
-    private String modelo;
-    private int ano;
-    private double preco;
-
-    public String getMarca() { return marca; }
-
-    public void setMarca(String marca) { this.marca = marca; }
-
-    public String getModelo() { return modelo; }
-
-    public void setModelo(String modelo) { this.modelo = modelo; }
-
-    public int getAno() { return ano; }
-
-    public void setAno(int Ano) { this.ano = Ano; }
-
-    public double getPreco() { return preco; }
-
-    public void setPreco(double preco) {
-        if (preco < 0) {
-            this.preco = 0;
-        } else {
-            this.preco = preco;
-        }
-
-    }
-
-    @Override
-    public String toString() {
-        return String.format("Marca: %s%nModelo: %s%nAno: %d%nPreco: R$ %.2f%n",
-                getMarca(), getModelo(), getAno(), getPreco());
-    }
-}
-
 public class Main {
     public static void main(String[] args) {
-        Carro carro1 = new Carro();
-        Carro carro2 = new Carro();
+        CarroEsportivo esportivo = new CarroEsportivo();
+        esportivo.setMarca("BMW");
+        esportivo.setModelo("320i");
+        esportivo.setAno(2025);
+        esportivo.setPreco(600000.00);
+        esportivo.setVelocidadeMaxima(320.0);
 
-        carro1.setMarca("Chevrolet");
-        carro1.setModelo("Corvette");
-        carro1.setAno(2025);
-        carro1.setPreco(1000000.00);
+        CarroPopular popular = new CarroPopular();
+        popular.setMarca("Volkswagen");
+        popular.setModelo("Gol G5");
+        popular.setAno(2020);
+        popular.setPreco(50000.00);
+        popular.setConsumoPorLitro(18.5);
 
-        carro2.setMarca("Ferrari");
-        carro2.setModelo("La Ferrari");
-        carro2.setAno(2020);
-        carro2.setPreco(-5000000.00);
+        CarroHibrido hibrido = new CarroHibrido();
+        hibrido.setMarca("Toyota");
+        hibrido.setModelo("Rav 4");
+        hibrido.setAno(2022);
+        hibrido.setPreco(350000.00);
+        hibrido.setConsumoPorLitro(35.0);
+        hibrido.setAutonomiaEletrica(55);
 
-        System.out.println(carro1);
-        System.out.println("------------------");
-        System.out.println(carro2);
+        System.out.println("\n-------- Carro Esportivo --------");
+        System.out.println(esportivo);
+        System.out.println("\n-------- Carro Popular --------");
+        System.out.println(popular);
+        System.out.println("\n-------- Carro Hibrido --------");
+        System.out.println(hibrido);
     }
 }
