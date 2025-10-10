@@ -1,16 +1,22 @@
 package org.example;
 
 public class CarroEsportivo extends Carro {
-    private double velocidadeMaxima;
-    
-    public  double getVelocidadeMaxima() { return velocidadeMaxima; }
-    
-    public void setVelocidadeMaxima(double velocidadeMaxima) {
-        this.velocidadeMaxima = velocidadeMaxima;
+    public CarroEsportivo(String modelo, int ano, String cor, String motor){
+        super(modelo, ano, cor, motor);
     }
-    
+
     @Override
-    public String toString() {
-        return super.toString() + String.format("Velocidade Maxima: %.1f km/h", getVelocidadeMaxima());
+    public void acelerar() {
+        System.out.println("Acelerando o carro esportivo!");
+    }
+
+    @Override
+    public void frear() {
+        System.out.println("Freando o " + getModelo() + " ate parar!");
+    }
+
+    @Override
+    public void tipoMotor() {
+        System.out.println("Motor " + getMotor() +" esta em acao!" );
     }
 }

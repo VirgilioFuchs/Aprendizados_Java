@@ -1,39 +1,41 @@
 package org.example;
 
-public class Carro {
-    private String marca;
+public abstract class Carro {
     private String modelo;
     private int ano;
-    private double preco;
+    private String cor;
+    private String motor;
 
-    public String getMarca() { return marca; }
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
-    public String getModelo() { return modelo; }
-    public void setModelo(String modelo) {
+    public Carro(String modelo, int ano, String cor, String motor) {
         this.modelo = modelo;
-    }
-
-    public int getAno() { return ano; }
-    public void setAno(int ano) {
         this.ano = ano;
+        this.cor = cor;
+        this.motor = motor;
     }
 
-    public double getPreco() { return preco; }
-    public void setPreco(double preco) {
-        if (preco < 0) {
-            System.out.println("Preco invalido!");
-            this.preco = 0;
-        } else {
-            this.preco = preco;
-        }
+    public String getModelo() {
+        return modelo;
     }
 
-    @Override
-    public String toString() {
-        return String.format("Marca: %s%nModelo: %s%nAno: %d%nPreco: R$ %.2f%n",
-                getMarca(), getModelo(), getAno(), getPreco());
+    public int getAno() {
+        return ano;
     }
+
+    public String getCor() {
+        return cor;
+    }
+
+    public String getMotor() {
+        return motor;
+    }
+
+    public void exibirInfo() {
+        System.out.println(String.format("Modelo: %s%nCor: %s%nAno: %d", getModelo(), getCor(), getAno()));
+    }
+
+    public abstract void acelerar();
+
+    public abstract void frear();
+
+    public abstract void tipoMotor();
 }
