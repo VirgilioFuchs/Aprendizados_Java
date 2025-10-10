@@ -1,5 +1,8 @@
 package org.example;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         CarroEsportivo esportivo = new CarroEsportivo();
@@ -15,6 +18,7 @@ public class Main {
         popular.setAno(2020);
         popular.setPreco(50000.00);
         popular.setConsumoPorLitro(18.5);
+        popular.setConsumoPorLitro(18.5);
 
         CarroHibrido hibrido = new CarroHibrido();
         hibrido.setMarca("Toyota");
@@ -23,12 +27,15 @@ public class Main {
         hibrido.setPreco(350000.00);
         hibrido.setConsumoPorLitro(35.0);
         hibrido.setAutonomiaEletrica(55);
+        hibrido.setConsumoPorLitro(35.0);
+        hibrido.setAutonomiaEletrica(55.0);
 
-        System.out.println("\n-------- Carro Esportivo --------");
-        System.out.println(esportivo);
-        System.out.println("\n-------- Carro Popular --------");
-        System.out.println(popular);
-        System.out.println("\n-------- Carro Hibrido --------");
-        System.out.println(hibrido);
+        List<Carro> carros = Arrays.asList(esportivo,popular,hibrido);
+
+        for (Carro c: carros) {
+            System.out.println("------- Carro -------");
+            System.out.println(c);
+            System.out.println();
+        }
     }
 }
